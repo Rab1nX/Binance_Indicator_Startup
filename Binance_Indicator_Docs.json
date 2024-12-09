@@ -1,0 +1,1125 @@
+{
+  "operators": [
+    {
+      "name": "!=",
+      "description": "Not Equal. Suitable for any type of expression.",
+      "syntax": "expr1 != expr2",
+      "return": "boolean or series",
+      "example": "result = close != open"
+    },
+    {
+      "name": "%",
+      "description": "Modulo(remainder after division). Suitable for numeric expression.",
+      "syntax": "expr1 % expr2",
+      "return": "integer or float or series",
+      "example": "remainder = 10 % 3"
+    },
+    {
+      "name": "*",
+      "description": "Multiplication. Suitable for numeric expression.",
+      "syntax": "expr1 * expr2",
+      "return": "integer or float or series",
+      "example": "product = 5 * 4"
+    },
+    {
+      "name": "+",
+      "description": "Addition or unary plus operator。Suitable for numeric expression or string.",
+      "syntax": "expr1 + expr2 or + expr1",
+      "return": "Used to concatenation operator for string. For numeric operation, if one of the type is a series, then it will return series, followed by if one of the type is float then it will rturn float, and if both type is integer it will result in integer. Can be used as unary operation.",
+      "example": "sum = 5 + 4 or fullname = \"John\" + \" \" + \"Doe\""
+    },
+    {
+      "name": "-",
+      "description": "Substraction or unary minus operator. Suitable for numeric expression.",
+      "syntax": "expr1 - expr2 or - expr1",
+      "return": "integer or float or series",
+      "example": "difference = 10 - 5"
+    },
+    {
+      "name": "/",
+      "description": "Division。Suitable for numeric expression.",
+      "syntax": "expr1 / expr2",
+      "return": "integer or float or series",
+      "example": "quotient = 10 / 2"
+    },
+    {
+      "name": "**",
+      "description": "Exponent operator。Suitable for numeric expression.",
+      "syntax": "expr1 ** expr2",
+      "return": "integer or float or series",
+      "example": "power = 2 ** 3"
+    },
+    {
+      "name": "%=",
+      "description": "Modulo assignment(save remainder after division to a variable). Suitable for numeric expression.",
+      "syntax": "expr1 %= expr2",
+      "return": null,
+      "example": "x = 10\nx %= 3"
+    },
+    {
+      "name": "*=",
+      "description": "Mulitiplication assignment. Suitable for numeric expression.",
+      "syntax": "expr1 *= expr2",
+      "return": null,
+      "example": "x = 5\nx *= 2"
+    },
+    {
+      "name": "+=",
+      "description": "Addition assignment. Suitable for numeric expression.",
+      "syntax": "expr1 += expr2",
+      "return": null,
+      "example": "x = 5\nx += 2"
+    },
+    {
+      "name": "-=",
+      "description": "Subtraction assignment. Suitable for numeric expression.",
+      "syntax": "expr1 -= expr2",
+      "return": null,
+      "example": "x = 10\nx -= 5"
+    },
+    {
+      "name": "/=",
+      "description": "Division assignment. Suitable for numeric expression.",
+      "syntax": "expr1 /= expr2",
+      "return": null,
+      "example": "x = 10\nx /= 2"
+    },
+    {
+      "name": "<",
+      "description": "Less Than. Suitable for numeric expression.",
+      "syntax": "expr1 < expr2",
+      "return": "boolean or series",
+      "example": "result = 5 < 10"
+    },
+    {
+      "name": ">",
+      "description": "More Than. Suitable for numeric expression.",
+      "syntax": "expr1 > expr2",
+      "return": "boolean or series",
+      "example": "result = 10 > 5"
+    },
+    {
+      "name": "<=",
+      "description": "Less Than or Equal To. Suitable for numeric expression.",
+      "syntax": "expr1 <= expr2",
+      "return": "boolean or series",
+      "example": "result = 5 <= 5"
+    },
+    {
+      "name": ">=",
+      "description": "Greater Than or Equal To。Suitable for numeric expression.",
+      "syntax": "expr1 >= expr2",
+      "return": "boolean or series",
+      "example": "result = 10 >= 10"
+    },
+    {
+      "name": "==",
+      "description": "Equal. Suitable for numeric expression.",
+      "syntax": "expr1 == expr2",
+      "return": "boolean or series",
+      "example": "result = 5 == 5"
+    },
+    {
+      "name": "?:",
+      "description": "Conditional ternary operator.",
+      "syntax": "expr1 ? expr2 : expr3",
+      "return": null,
+      "example": "result = close > open ? highest(close,10) : lowest(close,10)"
+    },
+    {
+      "name": "[]",
+      "description": "Tuple member reference.",
+      "syntax": "expr1[expr2]",
+      "return": "integer or float or series",
+      "example": "def fun(i,j):\n    return i,j\n\n(a,b) = fun(1,2)\nr = fun(1,2)\n(c, d) = r\ne  = r[0]\nf = r[1]"
+    },
+    {
+      "name": "and",
+      "description": "Logical Conjunction. Suitable for boolean expression.",
+      "syntax": "expr1 and expr2",
+      "return": "boolean or series",
+      "example": "result = true and false"
+    },
+    {
+      "name": "or",
+      "description": "Logical Disjunction。Suitable for boolean expression.",
+      "syntax": "expr1 or expr2",
+      "return": "boolean or series",
+      "example": "result = true or false"
+    },
+    {
+      "name": "not",
+      "description": "Negation。Suitable for boolean expression.",
+      "syntax": "not expr1",
+      "return": "boolean or series",
+      "example": "result = not true"
+    },
+    {
+      "name": "for",
+      "description": "For statement allows repeated execution of some instructions. When the loop is not cancelled by break, it will execute the following else statement block",
+      "syntax": "for i in range(start, end, step):\n    # statements\nelse:\n    # statements",
+      "return": null,
+      "example": "sum = 0\nfor i in range(0,10,2):\n    sum += i\nelse:\n     sum = 20"
+    },
+    {
+      "name": "if",
+      "description": "The if statement define a block of statement to be executed when the expression condition is met.",
+      "syntax": "if condition:\n    # statements\nelif condition:\n    # statements\nelse:\n    # statements",
+      "return": null,
+      "example": "sum = 0\nif close >open:\n    sum+=1\nelif close == open:\n    sum += 2\nelse :\n    sum+= 3"
+    },
+    {
+      "name": "def",
+      "description": "def to define function",
+      "syntax": "def function_name(parameters):\n    # statements\n    return value",
+      "return": null,
+      "example": "def my_fun(i,j=open):\n    return i,j\n\n(x,y) = my_fun(close)\nresult = my_fun(close,open)\n(a,b) = result\nm = result[0]\nn = result[1]\nprint(a)\nprint(m)"
+    }
+  ],
+  "built_in_variables": [
+    {
+      "name": "open",
+      "description": "Current opening price",
+      "type": "float"
+    },
+    {
+      "name": "high",
+      "description": "Current high price",
+      "type": "float"
+    },
+    {
+      "name": "low",
+      "description": "Current low price",
+      "type": "float"
+    },
+    {
+      "name": "close",
+      "description": "Current closing price",
+      "type": "float"
+    },
+    {
+      "name": "time",
+      "description": "Current time",
+      "type": "float"
+    },
+    {
+      "name": "volume",
+      "description": "Current volume",
+      "type": "float"
+    }
+  ],
+  "built_in_functions": [
+    {
+      "name": "abs",
+      "description": "If x>=0, the absolute value of x is x, otherwise it is -x.",
+      "syntax": "abs(x) → float",
+      "return": "Absolute of x",
+      "example": "result = abs(-5)"
+    },
+    {
+      "name": "acos",
+      "description": "The acos function returns the arccosine of a number (expressed in radians), such as cos(acos(y)) = y in the y range [-1, 1].",
+      "syntax": "acos(x) → float",
+      "return": "Arccosine value。If y is out of the range [-1,1], the return angle is within the range of [0, Pi] or NaN.",
+      "example": "result = acos(0.5)"
+    },
+    {
+      "name": "alma",
+      "description": "Arnaud Legoux Moving Average. It uses Gaussian distribution as the weight of the moving average.",
+      "syntax": "alma(series, length, offset, sigma) → series[float]",
+      "return": "Arnaud Legoux Moving Average",
+      "example": "plot(alma(close, 9, 0.85, 6))",
+      "parameters": [
+        {
+          "name": "series",
+          "description": "Data series"
+        },
+        {
+          "name": "length",
+          "description": "Number of K-lines (length)"
+        },
+        {
+          "name": "offset",
+          "description": "Control the trade-off between smoothness (closer to 1) and responsiveness (closer to 0)。"
+        },
+        {
+          "name": "sigma",
+          "description": " Change the smoothness of ALMA. The larger the Sigma, the smoother the ALMA."
+        }
+      ]
+    },
+    {
+      "name": "asin",
+      "description": "If the asin function returns the arcsine of a number (in radians), sine (asin(y)) = y is in the range of y [-1, 1].",
+      "syntax": "asin(x) → float",
+      "return": "Arcsine value. If y is out of the range [-1,1], the return angle is within the range of [-Pi/2, Pi/2] or na.",
+      "example": "result = asin(0.5)"
+    },
+    {
+      "name": "atan",
+      "description": "The atan function returns the arctangent of a number (expressed in radians), tan(atan(y)) = any y in y.",
+      "syntax": "atan(x) → float",
+      "return": "Arctangent value; The return angle is within the range of [-Pi / 2, Pi / 2].",
+      "example": "result = atan(1)"
+    },
+    {
+      "name": "atr",
+      "description": "The function ATR (Average True Range) returns the RMA of the true range. The true fluctuation range is max(high-low, abs(high-close[1]), abs(low-close[1]))",
+      "syntax": "atr(length) → series[float]",
+      "return": "Average true range (ATR)",
+      "example": "plot(atr(14))",
+      "parameters": [
+        {
+          "name": "length",
+          "description": "Length"
+        }
+      ]
+    },
+    {
+      "name": "avg",
+      "description": "Calculate the average of all series (corresponding elements).",
+      "syntax": "avg(x1, x2, a, b) -> float",
+      "return": "Average",
+      "example": "result = avg(close,open)"
+    },
+    {
+      "name": "barssince",
+      "description": "When the condition is true, the barssince function calculates the number of K-lines.",
+      "syntax": "barssince(condition) → series[integer]",
+      "return": "If the status is true, the number of K-lines.",
+      "example": "barssince(close >= open)"
+    },
+    {
+      "name": "cci",
+      "description": "CCI (Commodity Path Index) is calculated by dividing the difference between the typical price and its simple moving average by the mean deviation. The index is scaled by an inverse factor of 0.015, to provide more readable value.",
+      "syntax": "cci(source, length) → series[float]",
+      "return": "x commdity path index of the past y line",
+      "example": "plot(cci(close, 15))",
+      "parameters": [
+        {
+          "name": "source",
+          "description": "Data series"
+        },
+        {
+          "name": "length",
+          "description": "Number of K-lines (length)."
+        }
+      ]
+    },
+    {
+      "name": "ceil",
+      "description": "Always rounds a number up to the next largest integer",
+      "syntax": "ceil(x) → float",
+      "return": "The smallest integer greater than or equal to the given number.",
+      "example": "result = ceil(100.2)"
+    },
+    {
+      "name": "change",
+      "description": "The difference between the current value and the previous value, x - x[y].",
+      "syntax": "change(source, length) → series[float]",
+      "return": "Series differences",
+      "example": "change(close, 1)",
+      "parameters": [
+        {
+          "name": "source",
+          "description": "series"
+        },
+        {
+          "name": "length",
+          "description": "Offset from the current K-line to the previous K-line"
+        }
+      ]
+    },
+    {
+      "name": "color",
+      "description": "Specify the transparency of a given color.",
+      "syntax": "color(color, transp) → color",
+      "return": "Colors with specific transparency",
+      "example": "plot(close-open,color=color(\"red\",60))",
+      "parameters": [
+        {
+          "name": "color",
+          "description": "color"
+        },
+        {
+          "name": "transp",
+          "description": "Values are from 0 (opaque) to 100 (not visible)"
+        }
+      ]
+    },
+    {
+      "name": "cos",
+      "description": "The cos function returns the trigonometric cosine of the angle.",
+      "syntax": "cos(x) → float",
+      "return": "The trigonometric cosine of an angle.",
+      "example": "result = cos(3.14159)"
+    },
+    {
+      "name": "cross",
+      "description": "cross(x, y) → series[bool]",
+      "syntax": "cross(x, y) → series[bool]",
+      "return": "If the two series cross each other, it is 1, otherwise it is 0.",
+      "example": "ema1 = ema(close,20)\nema2 = ema(close, 10)\n\nplot(cross(ema1,ema2)?-1:1, color=\"red\",style=\"histogram\")\nplot(sign(ema2- ema1))",
+      "parameters": [
+        {
+          "name": "x",
+          "description": "series"
+        },
+        {
+          "name": "y",
+          "description": "series"
+        }
+      ]
+    },
+    {
+      "name": "crossover",
+      "description": "The `x`-series is defined as having crossed over `y`-series if the value of `x` is greater than the value of `y` and the value of `x` was less than the value of `y` on the bar immediately preceding the current bar.",
+      "syntax": "crossover(x, y) → series[bool]",
+      "return": "True if \"x\" crosses over \"y\", otherwise false",
+      "example": "ema1 = ema(close,20)\nema2 = ema(close, 10)\n\nplot(crossover(ema1,ema2)?-1:1, color=\"red\",style=\"histogram\")",
+      "parameters": [
+        {
+          "name": "x",
+          "description": "Data series`x`。"
+        },
+        {
+          "name": "y",
+          "description": "Data series`y`。"
+        }
+      ]
+    },
+    {
+      "name": "crossunder",
+      "description": "The `x`-series is defined as having crossed under `y`-series if the value of `x` is less than the value of `y` and the value of `x` was greater than the value of `y` on the bar immediately preceding the current bar.",
+      "syntax": "crossunder(x, y) → series[bool]",
+      "return": "If \"x\" crosses under \"y\", it is true, otherwise it is false.",
+      "example": "ema1 = ema(close,20)\nema2 = ema(close, 10)\n\nplot(crossunder(ema1,ema2)?-1:1, color=\"red\",style=\"histogram\")",
+      "parameters": [
+        {
+          "name": "x",
+          "description": "Data series`x`。"
+        },
+        {
+          "name": "y",
+          "description": "Data series`y`。"
+        }
+      ]
+    },
+    {
+      "name": "cum",
+      "description": "The cumulative (total) sum of x. In other words, this is the sum of all the elements of x.",
+      "syntax": "cum(x) → float",
+      "return": "Sum of a series",
+      "example": "plot(cum(close))"
+    },
+    {
+      "name": "dayofmonth",
+      "description": "dayofmonth(time) → series",
+      "syntax": "dayofmonth(time) → series",
+      "return": "Provides the day of the month (exchange time zone) in UNIX time.",
+      "example": "plot(dayofmonth(time))",
+      "parameters": [
+        {
+          "name": "time",
+          "description": "Unix time in milliseconds."
+        }
+      ]
+    },
+    {
+      "name": "dayofweek",
+      "description": "dayofweek(time) → series",
+      "syntax": "dayofweek(time) → series",
+      "return": "Provides the day of the week (exchange time zone) in UNIX time.",
+      "example": "plot(dayofweek(time))",
+      "parameters": [
+        {
+          "name": "time",
+          "description": "Unix time in milliseconds."
+        }
+      ]
+    },
+    {
+      "name": "dev",
+      "description": "Deviation between series and sma",
+      "syntax": "dev(source, length) → series[float]",
+      "return": "Deviation of y and x",
+      "example": "plot(dev(close, 10))",
+      "parameters": [
+        {
+          "name": "source",
+          "description": "Data series"
+        },
+        {
+          "name": "length",
+          "description": "Number of K-lines (length)."
+        }
+      ]
+    },
+    {
+      "name": "dmi",
+      "description": "The dmi function returns the trend index DMI.",
+      "syntax": "dmi(diLength, adxSmoothing) → (series[float], series[float], series[float])",
+      "return": "Three tuples of DMI series: rising index (+DI), falling index (-DI) and average trend index (ADX).",
+      "example": "(pdi, ndi, adx) = dmi(14, 14)\nplot(pdi, color=green)\nplot(ndi, color=red)\nplot(adx, color=blue)",
+      "parameters": [
+        {
+          "name": "diLength",
+          "description": "DI Period。"
+        },
+        {
+          "name": "adxSmoothing",
+          "description": "ADX smoothing period"
+        }
+      ]
+    },
+    {
+      "name": "ema",
+      "description": "The ema function returns the exponentially weighted moving average. The weighting factor in ema decreased exponentially. 它It is calculated by the formula: EMA = alpha * x + (1-alpha) * EMA[1], where alpha = 2 / (y + 1)",
+      "syntax": "ema(source, length) → series[float]",
+      "return": "Exponential moving average of x where alpha = 2 / (y + 1)",
+      "example": "plot(ema(close, 15))",
+      "parameters": [
+        {
+          "name": "source",
+          "description": "Data series"
+        },
+        {
+          "name": "length",
+          "description": "Number of K-lines (length)"
+        }
+      ]
+    },
+    {
+      "name": "exp",
+      "description": "The exp function of x is e^x, where x is the parameter and e is the Euler number.",
+      "syntax": "exp(x) → float",
+      "return": "A number representing e^x",
+      "example": "result = exp(10)"
+    },
+    {
+      "name": "falling",
+      "description": "Test if x series fall along y axis.",
+      "syntax": "falling(source, length) → series[float]",
+      "return": "If the current x is less than any previous x on the past y line, return true, otherwise return false.",
+      "example": "falling(close, 5)",
+      "parameters": [
+        {
+          "name": "source",
+          "description": "Data series"
+        },
+        {
+          "name": "length",
+          "description": "Number of K-lines (length)"
+        }
+      ]
+    },
+    {
+      "name": "fill",
+      "description": "Plot a series of data on the chart",
+      "syntax": "fill(plot1, plot2, color, title) → void",
+      "return": "Fills background between two plots with a given color.",
+      "example": "p1 = plot(open)\np2 = plot(close)\nfill(p1, p2, color=color(\"green\",50))",
+      "parameters": [
+        {
+          "name": "plot1",
+          "description": "First plot series to be drawn。 Required。"
+        },
+        {
+          "name": "plot2",
+          "description": "Second plot series to be drawn. Required。"
+        },
+        {
+          "name": "color",
+          "description": "Color of drawn line. You can use 'color = \"red\"' or 'color =\"＃ff001a\"' or complex expression like 'color = close >= open ? \"green\" : \"red\"'. Optional。"
+        },
+        {
+          "name": "title",
+          "description": "Title of the filled object created. Optional。"
+        }
+      ]
+    },
+    {
+      "name": "fixnan",
+      "description": "For a given series, replace the NaN value with the previous non-NaN value.",
+      "syntax": "fixnan(x) → series",
+      "return": "series without NaN gap",
+      "example": "fixnan(close)",
+      "parameters": [
+        {
+          "name": "x",
+          "description": "series"
+        }
+      ]
+    },
+    {
+      "name": "floor",
+      "description": "returns closest integer value which is less than or equal to specified expression",
+      "syntax": "floor(x) → float",
+      "return": "A number representing the largest integer less than or equal to the specified number.",
+      "example": "result = floor(100.2)"
+    },
+    {
+      "name": "highest",
+      "description": "Highest value of a given series",
+      "syntax": "highest(source, length) → series[float]",
+      "return": "Highest value.",
+      "example": "plot(highest(close, 15))",
+      "parameters": [
+        {
+          "name": "source",
+          "description": "Data series"
+        },
+        {
+          "name": "length",
+          "description": "Number of K-lines (length)"
+        }
+      ]
+    },
+    {
+      "name": "highestbars",
+      "description": "The offset of the highest value from a given number of bars.",
+      "syntax": "highestbars(source, length) → series[float]",
+      "return": "Offset to the highest k-line.",
+      "example": "plot(highestbars(close, 15))",
+      "parameters": [
+        {
+          "name": "source",
+          "description": "Data series"
+        },
+        {
+          "name": "length",
+          "description": "Number of K-lines (length)"
+        }
+      ]
+    },
+    {
+      "name": "hma",
+      "description": "The hma function returns the Hull Moving Average",
+      "syntax": "hma(source, length) → series[float]",
+      "return": "return the Hull Moving Average given a \"length\" from the \"source\"",
+      "example": "src = input(defval=close, type=\"source\", title=\"Source\")\nlength = input(defval=9, type=\"int\", title=\"Length\")\nhmaBuildIn = hma(src, length)\nplot(hmaBuildIn, title=\"Hull MA\", color=\"#674EA7\")",
+      "parameters": [
+        {
+          "name": "source",
+          "description": "Data series"
+        },
+        {
+          "name": "length",
+          "description": "Number of K-lines (length)"
+        }
+      ]
+    },
+    {
+      "name": "linreg",
+      "description": "Linear regression curve. The curve that best fits the price within the time interval specified by the user. Use the least square method to calculate. The result of this function is calculated using the following formula: linreg = intercept + slope *(length-1-offset), where length is the second parameter, offset is the thrid parameter, intercept and slope are the values calculated by the source series least square method (first parameter)。",
+      "syntax": "linreg(source, length, offset) → series[float]",
+      "return": "Linear regression curve",
+      "example": "plot(linreg(open , 10, 10))",
+      "parameters": [
+        {
+          "name": "source",
+          "description": "Source series"
+        },
+        {
+          "name": "length",
+          "description": "Length"
+        },
+        {
+          "name": "offset",
+          "description": "Offset"
+        }
+      ]
+    },
+    {
+      "name": "log",
+      "description": "Natural logarithm of x>0 is unique \"y\", such as e ^ y = x",
+      "syntax": "log(x) → float",
+      "return": "The natural logarithm of x.",
+      "example": "result = log(100)"
+    },
+    {
+      "name": "lowest",
+      "description": "Lowest value of a given series",
+      "syntax": "lowest(source, length) → series[float]",
+      "return": "Lowest value",
+      "example": "plot(lowest(close, 15))",
+      "parameters": [
+        {
+          "name": "source",
+          "description": "Data series"
+        },
+        {
+          "name": "length",
+          "description": "Number of K-lines (length)"
+        }
+      ]
+    },
+    {
+      "name": "lowestbars",
+      "description": "The offset of the lowest value from a given number of bars.",
+      "syntax": "lowestbars(source, length) → series[float]",
+      "return": "Offset to the lowest k-line.",
+      "example": "plot(lowestbars(close, 15))",
+      "parameters": [
+        {
+          "name": "source",
+          "description": "Data series"
+        },
+        {
+          "name": "length",
+          "description": "Number of K-lines (length)"
+        }
+      ]
+    },
+    {
+      "name": "macd",
+      "description": "MACD(Moving Average Convergence Divergence)。 It should reveal changes in the strength, direction, momentum, and duration of stock price trends.",
+      "syntax": "macd(source, fastlen, slowlen, siglen) → (series[float], series[float], series[float])",
+      "return": "Three tuples of MACD series: MACD line, signal line and histogram line.",
+      "example": "(macdLine, signalLine, histLine) = macd(close, 12, 26, 9)\nplot(macdLine, color=\"blue\")\nplot(signalLine, color=\"orange\")\nplot(histLine, color=histLine>0?\"green\":\"red\", style=\"histogram\")",
+      "parameters": [
+        {
+          "name": "source",
+          "description": "Data series"
+        },
+        {
+          "name": "fastlen",
+          "description": "Fast line"
+        },
+        {
+          "name": "slowlen",
+          "description": "Slow length"
+        },
+        {
+          "name": "siglen",
+          "description": "Signal length"
+        }
+      ]
+    },
+    {
+      "name": "max",
+      "description": "Return the largest of multiple values",
+      "syntax": "max(x1, x2) -> float",
+      "return": "The largest of multiple values.",
+      "example": "result = max(close,open)"
+    },
+    {
+      "name": "min",
+      "description": "Return the smallest of multiple values",
+      "syntax": "min(x1, x2) -> float",
+      "return": "The smallest of multiple values.",
+      "example": "result = min(close,open)"
+    },
+    {
+      "name": "mom",
+      "description": "Momentum of price x and price x of a given series. This is just the difference between x - x[y].",
+      "syntax": "mom(source, length) → series[float]",
+      "return": "Momentum of price x and price x of a given series.",
+      "example": "plot(mom(close, 15))",
+      "parameters": [
+        {
+          "name": "source",
+          "description": "Data series"
+        },
+        {
+          "name": "length",
+          "description": "Number of K-lines (length)"
+        }
+      ]
+    },
+    {
+      "name": "na",
+      "description": "Test a value if it is a NaN",
+      "syntax": "na(x) → boolean",
+      "return": "If x is not a valid number, it is true (x is NaN), otherwise it is false.",
+      "example": "na(close[1])"
+    },
+    {
+      "name": "nz",
+      "description": "Replace NaN values with zeros (or specified numbers) in the series.",
+      "syntax": "nz(x, y)",
+      "return": "Two parameter versions: if it is a valid (non-NaN) number, then return x, otherwise y\nOne parameter version: if it is a valid (non-NaN) number, x is returned, otherwise 0",
+      "example": "nz(close[1], open)",
+      "parameters": [
+        {
+          "name": "x",
+          "description": "Data series"
+        },
+        {
+          "name": "y",
+          "description": "Value to replace NaN"
+        }
+      ]
+    },
+    {
+      "name": "pivothigh",
+      "description": "This function returns the price of the pivot high. If there is no pivot high, \"NaN\" is returned.",
+      "syntax": "pivothigh(source, leftbars, rightbars) → series[float]",
+      "return": "The price at pivot high or'NaN'.",
+      "example": "leftBars = input(2,type=\"int\")\nrightBars=input(2,type=\"int\")\nph = pivothigh(high,leftBars, rightBars)\nplot(ph, style=\"cross\", linewidth=3, color= \"red\", offset=-rightBars)",
+      "parameters": [
+        {
+          "name": "source",
+          "description": "Data series"
+        },
+        {
+          "name": "leftbars",
+          "description": "Left bars"
+        },
+        {
+          "name": "rightbars",
+          "description": "Right bars"
+        }
+      ]
+    },
+    {
+      "name": "pivotlow",
+      "description": "This function returns the price of the pivot low. If there is no pivot low, return \"NaN\".",
+      "syntax": "pivotlow(source, leftBars, rightBars) → series[float]",
+      "return": "The price of the pivot low or'NaN'.",
+      "example": "leftBars = input(2,type=\"int\")\nrightBars=input(2,type=\"int\")\npl = pivotlow(low,leftBars, rightBars)\nplot(pl, style=\"cross\", linewidth=3, color= \"red\", offset=-rightBars)",
+      "parameters": [
+        {
+          "name": "source",
+          "description": "Data series"
+        },
+        {
+          "name": "leftBars",
+          "description": "Left bars"
+        },
+            {
+          "name": "rightBars",
+          "description": "Right bars"
+        }
+      ]
+    },
+    {
+      "name": "plot",
+      "description": "Plot a series of data on the chart",
+      "syntax": "plot(series, title, color, linewidth, style) → plot",
+      "return": "A plot object, that can be used in fill",
+      "example": "plot(high+low, title=\"Title\", color=\"#00ffaa\", linewidth=2, style=\"area\",histbase=0,offset=-10)",
+      "parameters": [
+        {
+          "name": "series",
+          "description": "Data series to be drawn. Required."
+        },
+        {
+          "name": "title",
+          "description": "Title."
+        },
+        {
+          "name": "color",
+          "description": "Color of drawn line. You can use 'color = \"red\"' or 'color =\"＃ff001a\"' or complex expression like 'color = close >= open ? \"green\" : \"red\"'. Optional."
+        },
+        {
+          "name": "linewidth",
+          "description": "Width of the drawn line, use a vlua from 1 to 4. Default value is 1. Not applicable to every style."
+        },
+        {
+          "name": "style",
+          "description": "Drawing type. Possible value：\"line\" \"histogram\"，\"cross\"，\"area\". Default value is \"line\"."
+        },
+        {
+          "name": "histbase",
+          "description": "When rendering the drawing using the \"area\" style，this specifies the price axis’ starting point for the columns。 Default value is 0.0。"
+        },
+        {
+          "name": "offset",
+          "description": "Specifies if the K-lines should shift to the left (with negative values) or to the right (with positive values). Default value is 0。"
+        }
+      ]
+    },
+    {
+      "name": "prev",
+      "description": "To query previous source series data, length is number of previous K-lines.",
+      "syntax": "prev(source, length) → series[float]",
+      "return": "series of values",
+      "example": "a = 0.0\na = prev(a,1)",
+      "parameters": [
+        {
+          "name": "source",
+          "description": "Data series"
+        },
+        {
+          "name": "length",
+          "description": "Number of K-lines (length)"
+        }
+      ]
+    },
+    {
+      "name": "rising",
+      "description": "Test if x series rise along y axis.",
+      "syntax": "rising(source, length) → series[float]",
+      "return": "If the current x is greater than any previous x on the past y line, return true, otherwise return false.",
+      "example": "rising(close, 5)",
+      "parameters": [
+        {
+          "name": "source",
+          "description": "Data series"
+        },
+        {
+          "name": "length",
+          "description": "Number of K-lines (length)"
+        }
+      ]
+    },
+    {
+      "name": "rma",
+      "description": "The moving average used in RSI. It is an exponentially weighted moving average line, alpha's weighted value = 1 / length.",
+      "syntax": "rma(source, length) → series[float]",
+      "return": "Exponential moving average of x = 1 / y.",
+      "example": "plot(rma(close, 15))",
+      "parameters": [
+        {
+          "name": "source",
+          "description": "Data series"
+        },
+        {
+          "name": "length",
+          "description": "Number of K-lines (length)."
+        }
+      ]
+    },
+    {
+      "name": "round",
+      "description": "The number rounded to the nearest integer.",
+      "syntax": "round(x) → float",
+      "return": "The value of the given number rounded to the nearest integer",
+      "example": "result = round(100.2)"
+    },
+    {
+      "name": "rsi",
+      "description": "Relative strength index. It is calculated based on the upward and downward changes of x's rma.",
+      "syntax": "rsi(source, length) → series[float]",
+      "return": "Relative strength index (RSI)",
+      "example": "plot(rsi(close, 7))",
+      "parameters": [
+        {
+          "name": "source",
+          "description": "Data series"
+        },
+        {
+          "name": "length",
+          "description": "Number of K-lines (length)"
+        }
+      ]
+    },
+    {
+      "name": "sar",
+      "description": "Parabolic SAR (parabolic stop and reversal) is a method designed by J. Welles Wilder, Jr. To find a potential reversal of the price direction of the trading market.",
+      "syntax": "sar(start, inc, max) → series[float]",
+      "return": "Parabolic SAR",
+      "example": "plot(sar(0.2, 0.2, .2), style=\"cross\", linewidth=3)",
+      "parameters": [
+        {
+          "name": "start",
+          "description": "Start"
+        },
+        {
+          "name": "inc",
+          "description": "Increment"
+        },
+        {
+          "name": "max",
+          "description": "Max"
+        }
+      ]
+    },
+    {
+      "name": "sign",
+      "description": "If x is zero, the sign of x (signature function) is 0, if x is greater than zero, it is 1.0, and if x is less than zero, it is -1.0.",
+      "syntax": "sign(x) -> float",
+      "return": "Parameter flag",
+      "example": "sign(close - open)"
+    },
+    {
+      "name": "sma",
+      "description": "The sma function returns the simple moving average, which is the last y value of x, divided by y.",
+      "syntax": "sma(source, length) → series[float]",
+      "return": "The simple moving average of x for the past y line.",
+      "example": "plot(sma(close, 15))",
+      "parameters": [
+        {
+          "name": "source",
+          "description": "Data series"
+        },
+        {
+          "name": "length",
+          "description": "Number of K-lines (length)"
+        }
+      ]
+    },
+    {
+      "name": "sqrt",
+      "description": "Square root of any x >= 0 is the unique y >= 0 such that y^2 = x",
+      "syntax": "abs(x) → float",
+      "return": "Square root of x",
+      "example": "result = sqrt(100)"
+    },
+    {
+      "name": "stdev",
+      "description": "Standard deviation",
+      "syntax": "stdev(source, length) → series[float]",
+      "return": "Standard deviation",
+      "example": "plot(stdev(close, 5))",
+      "parameters": [
+        {
+          "name": "source",
+          "description": "Data series"
+        },
+        {
+          "name": "length",
+          "description": "Number of K-lines (length)"
+        }
+      ]
+    },
+    {
+      "name": "stoch",
+      "description": "Stochastic indicators. Calculation equation: 100 * (close - lowest(low, length)) / (highest(high, length) - lowest(low, length))",
+      "syntax": "stoch(source, high, low, length) → series[float]",
+      "return": "Stochastic.",
+      "example": "plot(stoch(close, high, low, 10))",
+      "parameters": [
+        {
+          "name": "source",
+          "description": "Source series"
+        },
+        {
+          "name": "high",
+          "description": "High series"
+        },
+        {
+          "name": "low",
+          "description": "Low series"
+        },
+        {
+          "name": "length",
+          "description": "Length (number of K lines)"
+        }
+      ]
+    },
+    {
+      "name": "sum",
+      "description": "The sum function returns the sliding sum of last y values of x.",
+      "syntax": "sum(source, length) → series[float]",
+      "return": "Sum of x of the past y line,",
+      "example": "plot(sum(close,10))",
+      "parameters": [
+        {
+          "name": "source",
+          "description": "Data series"
+        },
+        {
+          "name": "length",
+          "description": "Number of K-lines (length)"
+        }
+      ]
+    },
+    {
+      "name": "timestamp",
+      "description": "The timestamp function returns the specified date and time in UNIX time.",
+      "syntax": "timestamp(year, month, day, hour, minute, second) → integer",
+      "return": "UNIX time",
+      "example": "show = timestamp(2016, 01, 19, 9, 30) > time",
+      "parameters": [
+        {
+          "name": "year",
+          "description": "Year"
+        },
+        {
+          "name": "month",
+          "description": "Month"
+        },
+        {
+          "name": "day",
+          "description": "Day"
+        },
+        {
+          "name": "hour",
+          "description": "Hour"
+        },
+        {
+          "name": "minute",
+          "description": "Minute"
+        },
+        {
+          "name": "second",
+          "description": "(Optional）Second. Default is 0"
+        }
+      ]
+    },
+    {
+      "name": "valuewhen",
+      "description": "When the most recent nth condition is true, return the source",
+      "syntax": "valuewhen(condition, source, occurrence) → series[float]",
+      "return": "Source value when the situation is true",
+      "example": "valuewhen(cross(slow, fast), close, 1)",
+      "parameters": [
+        {
+          "name": "condition",
+          "description": "Condition"
+        },
+        {
+          "name": "source",
+          "description": "Source"
+        },
+        {
+          "name": "occurrence",
+          "description": "Occurrence"
+        }
+      ]
+    },
+    {
+      "name": "variance",
+      "description": "Variance is an expectation of a series of mean deviations(sma), and informally measures the degree to which a set of numbers is evenly distributed",
+      "syntax": "variance(source, length) → series[float]",
+      "return": "The x variance of the past y line.",
+      "example": "plot(variance(close, 15))",
+      "parameters": [
+        {
+          "name": "source",
+          "description": "Data series"
+        },
+        {
+          "name": "length",
+          "description": "Number of K-lines (length)"
+        }
+      ]
+    },
+    {
+      "name": "vwma",
+      "description": "The vwma function returns volume weighted moving average. It's the same as: sma(x * volume, y) / sma(volume, y)",
+      "syntax": "vwma(source, length) → series[float]",
+      "return": "The x volume weighted moving average of the past y line.",
+      "example": "plot(vwma(close, 15))",
+      "parameters": [
+        {
+          "name": "source",
+          "description": "Data series"
+        },
+        {
+          "name": "length",
+          "description": "Number of K-lines (length)"
+        }
+      ]
+    },
+    {
+      "name": "wma",
+      "description": "The wma function will get back the weighted moving average of x on the y line. In wma, the weighting factor is reduced in the arithmetic process.",
+      "syntax": "wma(source, length) → series[float]",
+      "return": "The x-weighted moving average of the past y line.",
+      "example": "plot(wma(close, 15))",
+      "parameters": [
+        {
+          "name": "source",
+          "description": "Data series"
+        },
+        {
+          "name": "length",
+          "description": "Number of K-lines (length)"
+        }
+      ]
+    }
+  ]
+}
